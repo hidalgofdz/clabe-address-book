@@ -62,6 +62,9 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  gem "syntax_tree", "~> 6.1"
+  gem "lefthook", "~> 1.4"
 end
 
 group :test do
