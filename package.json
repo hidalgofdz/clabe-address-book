@@ -1,9 +1,13 @@
 {
-    "scripts": {
-        "commitlint": "commitlint"
-    },
-    "devDependencies": {
-        "@commitlint/cli": "^17.6.5",
-        "@commitlint/config-conventional": "^17.6.5"
-    }
+  "scripts": {
+    "commitlint": "commitlint",
+    "prettier": "prettier --ignore-path .gitignore --ignore-unknown",
+    "format": "npm run prettier -- --write \"**/*\"",
+    "check-format": "npm run prettier -- --list-different \"**/*\""
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.5",
+    "@commitlint/config-conventional": "^17.6.5",
+    "prettier": "2.8.8"
+  }
 }

@@ -26,6 +26,10 @@ pre-commit:
       tags: backend
       glob: "*.rb"
       run: bundle exec stree write {staged_files}
+    format:
+      prettier:
+        tags: frontend
+        run: npm run prettier -- --write {staged_files} && git add {staged_files}
 #     eslint:
 #       glob: "*.{js,ts,jsx,tsx}"
 #       run: yarn eslint {staged_files}
