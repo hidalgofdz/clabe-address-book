@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -63,8 +64,11 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 
-  gem "syntax_tree", "~> 6.1"
   gem "lefthook", "~> 1.4"
+  gem "rubocop", "~> 1.52"
+  gem "rubocop-performance", "~> 1.18"
+  gem "rubocop-rails", "~> 2.19"
+  gem "syntax_tree", "~> 6.1"
 end
 
 group :test do

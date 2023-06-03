@@ -33,11 +33,10 @@ pre-commit:
 #     eslint:
 #       glob: "*.{js,ts,jsx,tsx}"
 #       run: yarn eslint {staged_files}
-#     rubocop:
-#       tags: backend style
-#       glob: "*.rb"
-#       exclude: "application.rb|routes.rb"
-#       run: bundle exec rubocop --force-exclusion {all_files}
+    rubocop:
+      tags: backend linter
+      glob: "{*.rb,Gemfile}"
+      run: bundle exec rubocop --force-exclusion {all_files}
 #     govet:
 #       tags: backend style
 #       files: git ls-files -m
