@@ -1,0 +1,24 @@
+version: '3.7'
+
+services:
+  db:
+    image: postgres:15
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: password
+  web:
+    container_name: clabe-address-book-web
+    build: .
+    command: tail -f /dev/null
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    environment:
+      POSTGRES_USERNAME: postgres
+      CLABE_ADDRESS_BOOK_DATABASE_PASSWORD: password
+    depends_on:
+      - db

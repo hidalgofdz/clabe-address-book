@@ -36,3 +36,43 @@ Things you may want to cover:
 
 1. [Good bundler practices](https://github.com/thoughtbot/guides/tree/main/ruby#bundler)
 2. [A Healthy bundle](https://thoughtbot.com/blog/a-healthy-bundle)
+
+
+# Local Development
+
+We are using docker compose to start:
+
+Run: 
+```shell
+docker compose up
+```
+
+To enter the web container run:
+
+```shell
+docker exec -it clabe-address-book-web bash
+```
+
+Once you are inside the container run:
+```shell
+bundle exec rails server -b 0.0.0.0
+```
+
+Remember to create and migrate the development and test database:
+
+Development:
+```shell
+RAILS_ENV=development rails db:create
+```
+```shell
+RAILS_ENV=development rails db:migrate
+```
+
+Test:
+```shell
+RAILS_ENV=test rails db:create
+```
+
+```shell
+RAILS_ENV=test rails db:migrate
+```
